@@ -10,6 +10,8 @@
 		F6E316A523EA29E400FB2BC9 /* ApiManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E3169B23EA29E400FB2BC9 /* ApiManager.framework */; };
 		F6E316AA23EA29E400FB2BC9 /* ApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E316A923EA29E400FB2BC9 /* ApiManagerTests.swift */; };
 		F6E316AC23EA29E400FB2BC9 /* ApiManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E3169E23EA29E400FB2BC9 /* ApiManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6E316B623EA29F500FB2BC9 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E316B523EA29F500FB2BC9 /* ApiManager.swift */; };
+		F6F65A3E23FDB22700BF0033 /* ApiManagerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F65A3D23FDB22700BF0033 /* ApiManagerErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +25,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		441E2223662D91D2EF178459 /* Pods-ApiManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiManager.release.xcconfig"; path = "Target Support Files/Pods-ApiManager/Pods-ApiManager.release.xcconfig"; sourceTree = "<group>"; };
+		56236B974B22FFA16D83F129 /* Pods_ApiManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D2B212604C86812D5EB315 /* Pods-ApiManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiManager.debug.xcconfig"; path = "Target Support Files/Pods-ApiManager/Pods-ApiManager.debug.xcconfig"; sourceTree = "<group>"; };
 		F6E3169B23EA29E400FB2BC9 /* ApiManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApiManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E3169E23EA29E400FB2BC9 /* ApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiManager.h; sourceTree = "<group>"; };
 		F6E3169F23EA29E400FB2BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6E316A423EA29E400FB2BC9 /* ApiManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E316A923EA29E400FB2BC9 /* ApiManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerTests.swift; sourceTree = "<group>"; };
 		F6E316AB23EA29E400FB2BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6E316B523EA29F500FB2BC9 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		F6F65A3D23FDB22700BF0033 /* ApiManagerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +57,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55153DC6CFB30D416DD6B3D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56236B974B22FFA16D83F129 /* Pods_ApiManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		661A24DABB6581E1103D1A38 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80D2B212604C86812D5EB315 /* Pods-ApiManager.debug.xcconfig */,
+				441E2223662D91D2EF178459 /* Pods-ApiManager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F6E3169123EA29E400FB2BC9 = {
 			isa = PBXGroup;
 			children = (
 				F6E3169D23EA29E400FB2BC9 /* ApiManager */,
 				F6E316A823EA29E400FB2BC9 /* ApiManagerTests */,
 				F6E3169C23EA29E400FB2BC9 /* Products */,
+				661A24DABB6581E1103D1A38 /* Pods */,
+				55153DC6CFB30D416DD6B3D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +97,10 @@
 		F6E3169D23EA29E400FB2BC9 /* ApiManager */ = {
 			isa = PBXGroup;
 			children = (
+				F6E316B523EA29F500FB2BC9 /* ApiManager.swift */,
 				F6E3169E23EA29E400FB2BC9 /* ApiManager.h */,
 				F6E3169F23EA29E400FB2BC9 /* Info.plist */,
+				F6F65A3D23FDB22700BF0033 /* ApiManagerErrors.swift */,
 			);
 			path = ApiManager;
 			sourceTree = "<group>";
@@ -104,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6E316AF23EA29E400FB2BC9 /* Build configuration list for PBXNativeTarget "ApiManager" */;
 			buildPhases = (
+				6976C8BAA9984EDDBE08D38C /* [CP] Check Pods Manifest.lock */,
 				F6E3169623EA29E400FB2BC9 /* Headers */,
 				F6E3169723EA29E400FB2BC9 /* Sources */,
 				F6E3169823EA29E400FB2BC9 /* Frameworks */,
@@ -148,6 +177,7 @@
 				TargetAttributes = {
 					F6E3169A23EA29E400FB2BC9 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					F6E316A323EA29E400FB2BC9 = {
 						CreatedOnToolsVersion = 11.3;
@@ -190,11 +220,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6976C8BAA9984EDDBE08D38C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApiManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F6E3169723EA29E400FB2BC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E316B623EA29F500FB2BC9 /* ApiManager.swift in Sources */,
+				F6F65A3E23FDB22700BF0033 /* ApiManagerErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +396,9 @@
 		};
 		F6E316B023EA29E400FB2BC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80D2B212604C86812D5EB315 /* Pods-ApiManager.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -347,6 +406,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ApiManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,6 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.don.ApiManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -362,7 +423,9 @@
 		};
 		F6E316B123EA29E400FB2BC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 441E2223662D91D2EF178459 /* Pods-ApiManager.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -370,6 +433,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ApiManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,7 +450,9 @@
 		F6E316B323EA29E400FB2BC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ApiManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -395,6 +461,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.don.ApiManagerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -403,7 +471,9 @@
 		F6E316B423EA29E400FB2BC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ApiManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,6 +482,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.don.ApiManagerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

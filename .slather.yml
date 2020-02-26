@@ -1,0 +1,6 @@
+coverage_service: cobertura_xml
+xcodeproj: ApiManager.xcodeproj
+scheme: ApiManager
+output_directory: reports
+ignore:
+  - ApiManagerTests/*
