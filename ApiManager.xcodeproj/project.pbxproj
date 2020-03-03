@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F680ADFE2407EA5700BEB20F /* ApiManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F680ADFD2407EA5700BEB20F /* ApiManagerDelegate.swift */; };
 		F6E316A523EA29E400FB2BC9 /* ApiManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E3169B23EA29E400FB2BC9 /* ApiManager.framework */; };
 		F6E316AA23EA29E400FB2BC9 /* ApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E316A923EA29E400FB2BC9 /* ApiManagerTests.swift */; };
 		F6E316AC23EA29E400FB2BC9 /* ApiManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E3169E23EA29E400FB2BC9 /* ApiManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 		441E2223662D91D2EF178459 /* Pods-ApiManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiManager.release.xcconfig"; path = "Target Support Files/Pods-ApiManager/Pods-ApiManager.release.xcconfig"; sourceTree = "<group>"; };
 		56236B974B22FFA16D83F129 /* Pods_ApiManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D2B212604C86812D5EB315 /* Pods-ApiManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiManager.debug.xcconfig"; path = "Target Support Files/Pods-ApiManager/Pods-ApiManager.debug.xcconfig"; sourceTree = "<group>"; };
+		F680ADFD2407EA5700BEB20F /* ApiManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerDelegate.swift; sourceTree = "<group>"; };
 		F6E3169B23EA29E400FB2BC9 /* ApiManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApiManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E3169E23EA29E400FB2BC9 /* ApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiManager.h; sourceTree = "<group>"; };
 		F6E3169F23EA29E400FB2BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				F6E3169E23EA29E400FB2BC9 /* ApiManager.h */,
 				F6E3169F23EA29E400FB2BC9 /* Info.plist */,
 				F6F65A3D23FDB22700BF0033 /* ApiManagerErrors.swift */,
+				F680ADFD2407EA5700BEB20F /* ApiManagerDelegate.swift */,
 			);
 			path = ApiManager;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6E316B623EA29F500FB2BC9 /* ApiManager.swift in Sources */,
+				F680ADFE2407EA5700BEB20F /* ApiManagerDelegate.swift in Sources */,
 				F6F65A3E23FDB22700BF0033 /* ApiManagerErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
