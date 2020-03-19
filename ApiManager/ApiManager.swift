@@ -8,16 +8,13 @@
 
 import Foundation
 import Alamofire
+import PromiseKit
 
-
-public class DummyCodable: Codable
-{ }
 
 public class ApiManager {
-
-	public typealias ResultCompletion<T> = ((CompletionType<T>) -> ())
 	
-	public typealias CompletionType<T> = Swift.Result<T, NetworkError>
+	public typealias APIPromise<T: Codable> = Promise<T>
+	
 
 	/// server baseURL
 	public var baseURL: String
@@ -55,38 +52,22 @@ public class ApiManager {
 		self.baseURL = baseURL
 		self.session = session
 	}
-	/// Request with codable parameter
-	public func request<P:Codable, T:Codable>(_ to: String, method: HTTPMethod, paramData: P, callback: @escaping ResultCompletion<T?>) {
-		do {
-			let encodedParam = try encoder.encode(paramData)
-			
-			var request = URLRequest(url: absoluteURL(to))
-			request.httpMethod = method.rawValue
-			
-			for (key, value) in generatedHeader(authenticate: true)
-			{
-				request.addValue(value, forHTTPHeaderField: key)
-			}
-			request.httpBody = encodedParam
-			
-			self.session.request(request).responseData { (response) in
-				callback(self.handleResponse(response))
-				
-			}
-		}
-		catch
-		{
-			callback(.failure(.encodeFailed))
-		}
-	}
 	/// Request with dictionary parameters
-	public func request<T:Codable>(_ to: String, method: HTTPMethod, params: [String : Any]?, resultType: T.Type, callback: @escaping ResultCompletion<T?>) {
+	public func request<T:Codable>(_ to: String, method: HTTPMethod, params: [String : Any]?, resultType: T.Type) -> APIPromise<T> {
 		
-		self.session.request(absolutePath(to), method: method, parameters: params, encoding: method == .get ? URLEncoding.queryString : JSONEncoding.default, headers: generatedHeader(authenticate: true)).responseData { (response) in
-			callback(self.handleResponse(response))
-		}
+		self.session
+		.request(absolutePath(to), method: method, parameters: params, encoding: method == .get ? URLEncoding.queryString : URLEncoding.httpBody, headers: generatedHeader(authenticate: true))
+			.responseData()
+			.map({ (result) -> T in
+				
+				let (_, response) = result
+				let decoded : T = try self.handleResponse(response)
+				return decoded
+				
+			})
 	}
 }
+
 // MARK: - URL and Header generation
 
 extension ApiManager
@@ -119,10 +100,10 @@ extension ApiManager
 
 extension ApiManager
 {
-	func handleResponse<T:Codable>(_ response: DataResponse<Data>) -> Swift.Result<T?, NetworkError>  {
+	func handleResponse<T:Codable>(_ response: PMKAlamofireDataResponse) throws -> T  {
 		guard let statusCode = response.response?.statusCode
 			else {
-			return .failure(.requestTimedOut)
+				throw NetworkError.requestTimedOut
 		}
 		switch statusCode
 		{
@@ -132,67 +113,27 @@ extension ApiManager
 				guard let stuff = response.data
 					else {
 						print("⚠️ No data response for: \(response.request?.url?.absoluteString ?? "") found")
-						return .success(nil)
+						throw NetworkError.decodeFailed
 				}
 				let callbackData = try self.decoder.decode(T.self, from: stuff)
-				return .success(callbackData)
+				return callbackData
 			}
 			catch {
 
 				print(error)
 				print("⚠️ Decoding: \(response.request?.url?.absoluteString ?? "") response Failed")
-				return(.success(nil))
+				throw NetworkError.decodeFailed
 			}
 		case 400:
-			return(.failure(.badURL))
-//			guard let stuff = response.data, let parseModel = errorParseModel
-//				else {
-//					return .failure(.badURL)
-//			}
-//			/// - HANDLE server error messages
-//			do {
-//				let callbackData = try decoder.decode(parseModel.self, from: stuff)
-//				return .failure(.serverError(callbackData))
-//			}
-//			catch {
-//
-//				print("⚠️ Decoding: \(response.request?.url?.absoluteString ?? "") error response Failed")
-//				return(.failure(.decodeFailed))
-//			}
+			throw NetworkError.badURL
 
 		default:
 			//❗️⭕️🛑🆘❌‼️⚠️✅🔴🔜🔺
 			print("❌ Endpoint: \(response.request?.url?.absoluteString ?? "") Failed")
 			print(response.response ?? "🛑 Response empty")
-			print(response.result)
 			print(response.request ?? "🛑 Request empty")
 			print(String(data: response.data ?? Data(), encoding: .utf8) ?? "🛑 response data empty")
-			return .failure(.badURL)
-		}
-	}
-}
-//MARK: - Upload Management
-
-extension ApiManager
-{
-	public func upload<T:Codable>(_ to: String, data: Data, name: String = "images", callback: @escaping ResultCompletion<T?>) {
-		
-		let guid = UUID().uuidString.replacingOccurrences(of: "-", with: "")
-		self.session.upload(multipartFormData: { (MultipartFormData) in
-			
-			MultipartFormData.append(data, withName: name, fileName: "\(guid).jpg", mimeType: "image/jpeg/mp4/jpg/png")
-			
-		}, usingThreshold: .max, to: absolutePath(to), method: .post, headers: generatedHeader(authenticate: true), queue: nil) { (result) in
-			
-			switch result
-			{
-			case .success(let upload, _, _):
-				upload.responseData { [unowned self] (response) in
-					callback(self.handleResponse(response))
-				}
-			case .failure(_):
-				callback(.failure(.badURL))
-			}
+			throw NetworkError.badURL
 		}
 	}
 }

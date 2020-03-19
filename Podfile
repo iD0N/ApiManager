@@ -9,5 +9,6 @@ target 'ApiManager' do
   # Pods for ForiRoP
 
 pod 'Alamofire'
+pod 'PromiseKit/Alamofire'
 
 end
