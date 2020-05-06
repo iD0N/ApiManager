@@ -1,6 +1,6 @@
 //
-//  ApiManager.swift
-//  ApiManager
+//  Sloth.swift
+//  Sloth
 //
 //  Created by Don on 6/19/19.
 //  Copyright © 2019 Don. All rights reserved.
@@ -13,11 +13,11 @@ import Alamofire
 public class DummyCodable: Codable
 { }
 
-public class ApiManager {
+public class Sloth {
 
 	public typealias ResultCompletion<T> = ((CompletionType<T>) -> ())
 	
-	public typealias CompletionType<T> = Swift.Result<T, NetworkError>
+	public typealias CompletionType<T> = Swift.Result<T, SlothError>
 
 	/// server baseURL
 	public var baseURL: String
@@ -40,6 +40,7 @@ public class ApiManager {
 	/// Alamofire session
 	public var session: SessionManager
 	
+	public var delegate: SlothDelegate?
 	
 	/// initialize with baseURL only
 	public init(_ baseURL: String) {
@@ -89,8 +90,9 @@ public class ApiManager {
 }
 // MARK: - URL and Header generation
 
-extension ApiManager
+extension Sloth
 {
+	///returns the generated header, override to pass your custom headers
 	func generatedHeader(authenticate: Bool) -> [String: String] {
 		
 		var headers = ["content-type": "application/json",
@@ -117,9 +119,10 @@ extension ApiManager
 
 //MARK: - Response Handler
 
-extension ApiManager
+extension Sloth
 {
-	func handleResponse<T:Codable>(_ response: DataResponse<Data>) -> Swift.Result<T?, NetworkError>  {
+	func handleResponse<T:Codable>(_ response: DataResponse<Data>) -> Swift.Result<T?, SlothError>  {
+		
 		guard let statusCode = response.response?.statusCode
 			else {
 			return .failure(.requestTimedOut)
@@ -144,22 +147,12 @@ extension ApiManager
 				return(.success(nil))
 			}
 		case 400:
-			return(.failure(.badURL))
-//			guard let stuff = response.data, let parseModel = errorParseModel
-//				else {
-//					return .failure(.badURL)
-//			}
-//			/// - HANDLE server error messages
-//			do {
-//				let callbackData = try decoder.decode(parseModel.self, from: stuff)
-//				return .failure(.serverError(callbackData))
-//			}
-//			catch {
-//
-//				print("⚠️ Decoding: \(response.request?.url?.absoluteString ?? "") error response Failed")
-//				return(.failure(.decodeFailed))
-//			}
-
+			return(.failure(delegate?.sloth(self, requestFailed: response.request, error: .badURL) ?? .badURL))
+		case 401:
+			return(.failure(delegate?.sloth(self, requestFailed: response.request, error: .tokenExpired) ?? .tokenExpired))
+		case 403:
+			return(.failure(delegate?.sloth(self, requestFailed: response.request, error: .unAuthorized) ?? .unAuthorized))
+			
 		default:
 			//❗️⭕️🛑🆘❌‼️⚠️✅🔴🔜🔺
 			print("❌ Endpoint: \(response.request?.url?.absoluteString ?? "") Failed")
@@ -167,13 +160,13 @@ extension ApiManager
 			print(response.result)
 			print(response.request ?? "🛑 Request empty")
 			print(String(data: response.data ?? Data(), encoding: .utf8) ?? "🛑 response data empty")
-			return .failure(.badURL)
+			return .failure(delegate?.sloth(self, requestFailed: response.request, error: .badURL) ?? .badURL)
 		}
 	}
 }
 //MARK: - Upload Management
 
-extension ApiManager
+extension Sloth
 {
 	public func upload<T:Codable>(_ to: String, data: Data, name: String = "images", callback: @escaping ResultCompletion<T?>) {
 		

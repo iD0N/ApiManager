@@ -7,16 +7,16 @@
 //
 
 import XCTest
-@testable import ApiManager
+@testable import Sloth
 
 
-class ApiManagerTests: XCTestCase {
+class SlothTests: XCTestCase {
 
 	var baseURL = "http://185.55.226.129:3000/"
-	var manager: ApiManager!
+	var manager: Sloth!
     override func setUp() {
 		super.setUp()
-		manager = ApiManager(baseURL)
+		manager = Sloth(baseURL)
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 

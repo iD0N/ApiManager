@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F680ADFE2407EA5700BEB20F /* ApiManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F680ADFD2407EA5700BEB20F /* ApiManagerDelegate.swift */; };
-		F6E316A523EA29E400FB2BC9 /* ApiManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E3169B23EA29E400FB2BC9 /* ApiManager.framework */; };
-		F6E316AA23EA29E400FB2BC9 /* ApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E316A923EA29E400FB2BC9 /* ApiManagerTests.swift */; };
-		F6E316AC23EA29E400FB2BC9 /* ApiManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E3169E23EA29E400FB2BC9 /* ApiManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F6E316B623EA29F500FB2BC9 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E316B523EA29F500FB2BC9 /* ApiManager.swift */; };
-		F6F65A3E23FDB22700BF0033 /* ApiManagerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F65A3D23FDB22700BF0033 /* ApiManagerErrors.swift */; };
+		F680ADFE2407EA5700BEB20F /* SlothDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F680ADFD2407EA5700BEB20F /* SlothDelegate.swift */; };
+		F6E316A523EA29E400FB2BC9 /* Sloth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E3169B23EA29E400FB2BC9 /* Sloth.framework */; };
+		F6E316AA23EA29E400FB2BC9 /* SlothTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E316A923EA29E400FB2BC9 /* SlothTests.swift */; };
+		F6E316AC23EA29E400FB2BC9 /* Sloth.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E3169E23EA29E400FB2BC9 /* Sloth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6E316B623EA29F500FB2BC9 /* Sloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E316B523EA29F500FB2BC9 /* Sloth.swift */; };
+		F6F65A3E23FDB22700BF0033 /* SlothErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F65A3D23FDB22700BF0033 /* SlothErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,15 +29,15 @@
 		441E2223662D91D2EF178459 /* Pods-ApiManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiManager.release.xcconfig"; path = "Target Support Files/Pods-ApiManager/Pods-ApiManager.release.xcconfig"; sourceTree = "<group>"; };
 		56236B974B22FFA16D83F129 /* Pods_ApiManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D2B212604C86812D5EB315 /* Pods-ApiManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiManager.debug.xcconfig"; path = "Target Support Files/Pods-ApiManager/Pods-ApiManager.debug.xcconfig"; sourceTree = "<group>"; };
-		F680ADFD2407EA5700BEB20F /* ApiManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerDelegate.swift; sourceTree = "<group>"; };
-		F6E3169B23EA29E400FB2BC9 /* ApiManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApiManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6E3169E23EA29E400FB2BC9 /* ApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiManager.h; sourceTree = "<group>"; };
+		F680ADFD2407EA5700BEB20F /* SlothDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothDelegate.swift; sourceTree = "<group>"; };
+		F6E3169B23EA29E400FB2BC9 /* Sloth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sloth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6E3169E23EA29E400FB2BC9 /* Sloth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sloth.h; sourceTree = "<group>"; };
 		F6E3169F23EA29E400FB2BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F6E316A423EA29E400FB2BC9 /* ApiManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6E316A923EA29E400FB2BC9 /* ApiManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerTests.swift; sourceTree = "<group>"; };
+		F6E316A423EA29E400FB2BC9 /* SlothTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6E316A923EA29E400FB2BC9 /* SlothTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothTests.swift; sourceTree = "<group>"; };
 		F6E316AB23EA29E400FB2BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F6E316B523EA29F500FB2BC9 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		F6F65A3D23FDB22700BF0033 /* ApiManagerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerErrors.swift; sourceTree = "<group>"; };
+		F6E316B523EA29F500FB2BC9 /* Sloth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sloth.swift; sourceTree = "<group>"; };
+		F6F65A3D23FDB22700BF0033 /* SlothErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6E316A523EA29E400FB2BC9 /* ApiManager.framework in Frameworks */,
+				F6E316A523EA29E400FB2BC9 /* Sloth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +79,8 @@
 		F6E3169123EA29E400FB2BC9 = {
 			isa = PBXGroup;
 			children = (
-				F6E3169D23EA29E400FB2BC9 /* ApiManager */,
-				F6E316A823EA29E400FB2BC9 /* ApiManagerTests */,
+				F6E3169D23EA29E400FB2BC9 /* Sloth */,
+				F6E316A823EA29E400FB2BC9 /* SlothTests */,
 				F6E3169C23EA29E400FB2BC9 /* Products */,
 				661A24DABB6581E1103D1A38 /* Pods */,
 				55153DC6CFB30D416DD6B3D2 /* Frameworks */,
@@ -90,31 +90,31 @@
 		F6E3169C23EA29E400FB2BC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F6E3169B23EA29E400FB2BC9 /* ApiManager.framework */,
-				F6E316A423EA29E400FB2BC9 /* ApiManagerTests.xctest */,
+				F6E3169B23EA29E400FB2BC9 /* Sloth.framework */,
+				F6E316A423EA29E400FB2BC9 /* SlothTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F6E3169D23EA29E400FB2BC9 /* ApiManager */ = {
+		F6E3169D23EA29E400FB2BC9 /* Sloth */ = {
 			isa = PBXGroup;
 			children = (
-				F6E316B523EA29F500FB2BC9 /* ApiManager.swift */,
-				F6E3169E23EA29E400FB2BC9 /* ApiManager.h */,
+				F6E316B523EA29F500FB2BC9 /* Sloth.swift */,
+				F6E3169E23EA29E400FB2BC9 /* Sloth.h */,
 				F6E3169F23EA29E400FB2BC9 /* Info.plist */,
-				F6F65A3D23FDB22700BF0033 /* ApiManagerErrors.swift */,
-				F680ADFD2407EA5700BEB20F /* ApiManagerDelegate.swift */,
+				F6F65A3D23FDB22700BF0033 /* SlothErrors.swift */,
+				F680ADFD2407EA5700BEB20F /* SlothDelegate.swift */,
 			);
-			path = ApiManager;
+			path = Sloth;
 			sourceTree = "<group>";
 		};
-		F6E316A823EA29E400FB2BC9 /* ApiManagerTests */ = {
+		F6E316A823EA29E400FB2BC9 /* SlothTests */ = {
 			isa = PBXGroup;
 			children = (
-				F6E316A923EA29E400FB2BC9 /* ApiManagerTests.swift */,
+				F6E316A923EA29E400FB2BC9 /* SlothTests.swift */,
 				F6E316AB23EA29E400FB2BC9 /* Info.plist */,
 			);
-			path = ApiManagerTests;
+			path = SlothTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,16 +124,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6E316AC23EA29E400FB2BC9 /* ApiManager.h in Headers */,
+				F6E316AC23EA29E400FB2BC9 /* Sloth.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F6E3169A23EA29E400FB2BC9 /* ApiManager */ = {
+		F6E3169A23EA29E400FB2BC9 /* Sloth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F6E316AF23EA29E400FB2BC9 /* Build configuration list for PBXNativeTarget "ApiManager" */;
+			buildConfigurationList = F6E316AF23EA29E400FB2BC9 /* Build configuration list for PBXNativeTarget "Sloth" */;
 			buildPhases = (
 				6976C8BAA9984EDDBE08D38C /* [CP] Check Pods Manifest.lock */,
 				F6E3169623EA29E400FB2BC9 /* Headers */,
@@ -145,14 +145,14 @@
 			);
 			dependencies = (
 			);
-			name = ApiManager;
+			name = Sloth;
 			productName = ApiManager;
-			productReference = F6E3169B23EA29E400FB2BC9 /* ApiManager.framework */;
+			productReference = F6E3169B23EA29E400FB2BC9 /* Sloth.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F6E316A323EA29E400FB2BC9 /* ApiManagerTests */ = {
+		F6E316A323EA29E400FB2BC9 /* SlothTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F6E316B223EA29E400FB2BC9 /* Build configuration list for PBXNativeTarget "ApiManagerTests" */;
+			buildConfigurationList = F6E316B223EA29E400FB2BC9 /* Build configuration list for PBXNativeTarget "SlothTests" */;
 			buildPhases = (
 				F6E316A023EA29E400FB2BC9 /* Sources */,
 				F6E316A123EA29E400FB2BC9 /* Frameworks */,
@@ -163,9 +163,9 @@
 			dependencies = (
 				F6E316A723EA29E400FB2BC9 /* PBXTargetDependency */,
 			);
-			name = ApiManagerTests;
+			name = SlothTests;
 			productName = ApiManagerTests;
-			productReference = F6E316A423EA29E400FB2BC9 /* ApiManagerTests.xctest */;
+			productReference = F6E316A423EA29E400FB2BC9 /* SlothTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -187,7 +187,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F6E3169523EA29E400FB2BC9 /* Build configuration list for PBXProject "ApiManager" */;
+			buildConfigurationList = F6E3169523EA29E400FB2BC9 /* Build configuration list for PBXProject "Sloth" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -200,8 +200,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F6E3169A23EA29E400FB2BC9 /* ApiManager */,
-				F6E316A323EA29E400FB2BC9 /* ApiManagerTests */,
+				F6E3169A23EA29E400FB2BC9 /* Sloth */,
+				F6E316A323EA29E400FB2BC9 /* SlothTests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,9 +253,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6E316B623EA29F500FB2BC9 /* ApiManager.swift in Sources */,
-				F680ADFE2407EA5700BEB20F /* ApiManagerDelegate.swift in Sources */,
-				F6F65A3E23FDB22700BF0033 /* ApiManagerErrors.swift in Sources */,
+				F6E316B623EA29F500FB2BC9 /* Sloth.swift in Sources */,
+				F680ADFE2407EA5700BEB20F /* SlothDelegate.swift in Sources */,
+				F6F65A3E23FDB22700BF0033 /* SlothErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6E316AA23EA29E400FB2BC9 /* ApiManagerTests.swift in Sources */,
+				F6E316AA23EA29E400FB2BC9 /* SlothTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +272,7 @@
 /* Begin PBXTargetDependency section */
 		F6E316A723EA29E400FB2BC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F6E3169A23EA29E400FB2BC9 /* ApiManager */;
+			target = F6E3169A23EA29E400FB2BC9 /* Sloth */;
 			targetProxy = F6E316A623EA29E400FB2BC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -408,7 +408,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ApiManager/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sloth/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -435,7 +435,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ApiManager/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sloth/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,7 +496,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F6E3169523EA29E400FB2BC9 /* Build configuration list for PBXProject "ApiManager" */ = {
+		F6E3169523EA29E400FB2BC9 /* Build configuration list for PBXProject "Sloth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6E316AD23EA29E400FB2BC9 /* Debug */,
@@ -505,7 +505,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F6E316AF23EA29E400FB2BC9 /* Build configuration list for PBXNativeTarget "ApiManager" */ = {
+		F6E316AF23EA29E400FB2BC9 /* Build configuration list for PBXNativeTarget "Sloth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6E316B023EA29E400FB2BC9 /* Debug */,
@@ -514,7 +514,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F6E316B223EA29E400FB2BC9 /* Build configuration list for PBXNativeTarget "ApiManagerTests" */ = {
+		F6E316B223EA29E400FB2BC9 /* Build configuration list for PBXNativeTarget "SlothTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6E316B323EA29E400FB2BC9 /* Debug */,
